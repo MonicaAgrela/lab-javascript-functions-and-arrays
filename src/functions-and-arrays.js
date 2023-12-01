@@ -19,17 +19,30 @@ const words = [
   "crackpot",
 ];
 
-function findLongestWord() {
-  return null;
+function findLongestWord(wordsArr) {
+  if (wordsArr.length === 1) {
+    return wordsArr[0];
+  } else if (wordsArr.length === 0) {
+    return null;
+  } else {
+    let longestWord = "";
+
+    wordsArr.forEach(function (word) {
+      if (longestWord.length < word.length) {
+        longestWord = word;
+      }
+    });
+    return longestWord;
+  }
 }
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {
+function sumNumbers(sumArr) {
   let sum = 0;
-  for (let i = 0; i < numbers; i++) {
-    sum += numbers[i];
+  for (let i = 0; i < sumArr.length; i++) {
+    sum += sumArr[i];
   }
   return sum;
 }
